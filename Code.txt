@@ -1,0 +1,23 @@
+int Distance = 10000;
+int FirstFriendSpeed = 1;
+int SecondFriendSpeed = 2;
+int DogSpeed = 5;
+int Friend = 2;
+int Count = 0;
+int time = 0;
+while (Distance > 10)
+{
+    if(Friend == 1)
+    {
+        time = Distance /  (FirstFriendSpeed + DogSpeed);
+        Friend = 2;
+    }
+    else
+    {
+        time = Distance /  (SecondFriendSpeed + DogSpeed);
+        Friend = 1;
+    }
+    Distance = Distance - (FirstFriendSpeed + SecondFriendSpeed) * time;
+    Count++;
+}
+Console.Write("Собака пробежит " + Count + " раз.");
