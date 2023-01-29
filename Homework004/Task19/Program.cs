@@ -12,14 +12,12 @@ void WriteText(string msg)
 WriteText(msg: "Введите целое пятизначное число: ");
 if (int.TryParse(Console.ReadLine(), out int num))
 {
-
-    //int num = Convert.ToInt32(Console.ReadLine());
-    if (num < 10000 || num > 99999)
+    if (num < 10000 || num > 99999) 
     {
         WriteText("Вы ввели неверное число");
         return;
     }
-    if ((num / 10000) == (num % 10))
+    if ((num / 10000) == (num % 10))                 //if ((num / 10000) == (num % 10) && (num / 1000) % 10 == (num % 100) / 10)
         if ((num / 1000) % 10 == (num % 100) / 10)
             WriteText("Число является палиндромом");
         else

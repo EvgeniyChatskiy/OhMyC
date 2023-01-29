@@ -13,12 +13,12 @@ double method()
         Console.Write("Поддерживается ввод только числовых символов. Повторите ввод данных: ");
     return method();
 }
-double x1 = 0;
-double y1 = 0;
-double z1 = 0;
-double x2 = 0;
-double y2 = 0;
-double z2 = 0;
+double x1 = 0; //double x1 = method();
+double y1 = 0; //double y1 = method();
+double z1 = 0; //double z1 = method();
+double x2 = 0; //double x2 = method();
+double y2 = 0; //double y2 = method();
+double z2 = 0; //double z2 = method();
 double distance;
 Console.Write("Введите значение для координаты x1: ");
 x1 = method();
