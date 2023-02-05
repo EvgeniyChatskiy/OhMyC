@@ -7,26 +7,26 @@
 
 Console.WriteLine("Зададим двумерный массив и заполним его случайными числами.");
 Console.Write("Введите количество строк: ");
-int m = yameteSenpaiBaka();
+int m = YameteSenpaiBaka();
 Console.Write("Введите количество столбцов: ");
-int n = yameteSenpaiBaka();
-int[,] array = fillArray(m, n);
+int n = YameteSenpaiBaka();
+int[,] array = FillArray(m, n);
 
 Console.Write("Введите строку: ");
-int i = yameteSenpaiBaka();
+int i = YameteSenpaiBaka();
 Console.Write("Введите столбец: ");
-int j = yameteSenpaiBaka();
+int j = YameteSenpaiBaka();
 
 int isInRange = 0;
-isInRange = arrayInnerAreaCheck(array, i, j);
+isInRange = ArrayInnerAreaCheck(array, i, j);
 
 
-findNumber(array, isInRange);
-printArray(array);
-
+FindNumber(array, isInRange);
+PrintArray(array);
+Console.ReadKey();
 
 //Защита от дурака//
-int yameteSenpaiBaka()
+int YameteSenpaiBaka()
 {
     int input = 0;
     while (!int.TryParse(Console.ReadLine(), out input) || input <= 0) Console.Write("Ошибка ввода. Повторите попытку: ");
@@ -34,7 +34,7 @@ int yameteSenpaiBaka()
 }
 
 //Заполнение массива случайными числами//
-int[,] fillArray(int m, int n)
+int[,] FillArray(int m, int n)
 {
     int min = 10;
     int max = 100;
@@ -51,7 +51,7 @@ int[,] fillArray(int m, int n)
 }
 
 //Печать массива//
-void printArray(int[,] array)
+void PrintArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -64,7 +64,7 @@ void printArray(int[,] array)
 }
 
 //Поиск числа в массиве по индексу//
-void findNumber(int[,] array, int isInRange)
+void FindNumber(int[,] array, int isInRange)
 {
     if (isInRange == -1)
         Console.WriteLine("Такого числа нет в массиве");
@@ -73,7 +73,7 @@ void findNumber(int[,] array, int isInRange)
 }
 
 //Проверка выхода за пределы массива + защита от дурака//
-int arrayInnerAreaCheck(int[,] array, int i, int j)
+int ArrayInnerAreaCheck(int[,] array, int i, int j)
 {
     if (array.GetLength(0) < i || array.GetLength(1) < j)
     {
