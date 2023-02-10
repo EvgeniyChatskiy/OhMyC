@@ -6,26 +6,26 @@
 
 Console.WriteLine("Зададим двумерный массив и заполним его случайными вещественными числами.");
 Console.Write("Введите длину массива:");
-int n = YameteSenpaiBaka();
+int n = yameteSenpaiBaka();
 Console.Write("Введите высоту массива:");
-int m = YameteSenpaiBaka();
+int m = yameteSenpaiBaka();
 Console.Write("Введите порог минимального числа: ");
-int min = CheckMinimalNumber();
+int min = checkMinimalNumber();
 Console.Write("Введите порог максимального числа: ");
-int max = CheckMinimalNumber();
+int max = checkMinimalNumber();
 
 while (min >= max)
 {
     Console.WriteLine("Минимальное значение случайного числа не может быть больше значения максимального. Повторите ввод минимального числа: ");
-    min = CheckMinimalNumber();
+    min = checkMinimalNumber();
 }
 
-double[,] array = FillArray(m, n, min, max);
-PrintArray(array);
-Console.ReadKey();
+double[,] array = fillArray(m, n, min, max);
+printArray(array);
+
 
 //Защита от дурака//
-int YameteSenpaiBaka()
+int yameteSenpaiBaka()
 {
     int input = 0;
     while (!int.TryParse(Console.ReadLine(), out input) || input <= 0) Console.Write("Ошибка ввода. Повторите попытку: ");
@@ -33,7 +33,7 @@ int YameteSenpaiBaka()
 }
 
 //Проверка минимального числа на корректность//
-int CheckMinimalNumber()
+int checkMinimalNumber()
 {
     int input = 0;
     while (!int.TryParse(Console.ReadLine(), out input)) Console.Write("Ошибка ввода. Повторите попытку: ");
@@ -41,7 +41,7 @@ int CheckMinimalNumber()
 }
 
 //Заполнение массива случайными числами//
-double[,] FillArray(int m, int n, int min, int max)
+double[,] fillArray(int m, int n, int min, int max)
 {
     Random rnd = new Random();
     double[,] array = new double[m, n];
@@ -58,13 +58,13 @@ double[,] FillArray(int m, int n, int min, int max)
 }
 
 //Печать массива//
-void PrintArray(double[,] array)
+void printArray(double[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write($"{array[i, j]}\t");
+            Console.Write($"{array[i, j]}  ");
         }
         Console.WriteLine();
     }

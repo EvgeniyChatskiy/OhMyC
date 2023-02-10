@@ -7,20 +7,20 @@
 
 Console.WriteLine("Зададим двумерный массив из целых чисел и найдём среднее арифметическое в каждом столбце.");
 Console.Write("Введите количество строк: ");
-int m = YameteSenpaiBaka();
+int m = yameteSenpaiBaka();
 Console.Write("Введите количество столбцов: ");
-int n = YameteSenpaiBaka();
+int n = yameteSenpaiBaka();
 
-int[,] array = FillArray(m, n);
+int[,] array = fillArray(m, n);
 float average = 0;
 
 
-PrintArray(array);
-AverageNumber(array, average);
-Console.ReadKey();
+printArray(array);
+averageNumber(array, average);
+
 
 //Защита от дурака//
-int YameteSenpaiBaka()
+int yameteSenpaiBaka()
 {
     int input = 0;
     while (!int.TryParse(Console.ReadLine(), out input) || input <= 0) Console.Write("Ошибка ввода. Повторите попытку: ");
@@ -28,7 +28,7 @@ int YameteSenpaiBaka()
 }
 
 //Заполнение массива случайными числами//
-int[,] FillArray(int m, int n)
+int[,] fillArray(int m, int n)
 {
     int min = 1;
     int max = 10;
@@ -45,7 +45,7 @@ int[,] FillArray(int m, int n)
 }
 
 //НАхождение среднего арифметического каждого столбца//
-void AverageNumber(int[,] array, float average)
+void averageNumber(int[,] array, float average)
 {
     Console.Write("\nСреднее арифметическое каждого столбца: \n");
     for (int j = 0; j < array.GetLength(1); j++)
@@ -62,7 +62,7 @@ void AverageNumber(int[,] array, float average)
 }
 
 //Печать массива//
-void PrintArray(int[,] array)
+void printArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
