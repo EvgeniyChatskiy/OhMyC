@@ -24,7 +24,6 @@ double[,] array = FillArray(m, n, min, max);
 PrintArray(array);
 Console.ReadKey();
 
-
 //Защита от дурака//
 int YameteSenpaiBaka()
 {

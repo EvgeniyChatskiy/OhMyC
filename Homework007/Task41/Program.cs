@@ -17,13 +17,8 @@ Console.WriteLine(count);
 
 int bakaShield()
 {
-    while (!int.TryParse(Console.ReadLine(), out length))
-        Console.Write("Ввод литералов и символов недопустим. Повторите попытку: ");
-    while (length <= 0)
-    {
-        Console.Write("Введено отрицательное или нулевое числовое значение. Повторите попытку: ");
-        int.TryParse(Console.ReadLine(), out length);
-    }
+    while (!int.TryParse(Console.ReadLine(), out length) || length <= 0)
+        Console.Write("Ошибка ввода. Повторите попытку: ");
     return length;
 }
 
