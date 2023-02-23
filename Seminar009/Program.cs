@@ -1,33 +1,33 @@
 ﻿//Задача 63: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от 1 до N.
 //N = 5 -> "1, 2, 3, 4, 5"
 //N = 6 -> "1, 2, 3, 4, 5, 6"
-int N = InputGuard();
-PrintNumber(N);
-int InputGuard()
-{
-    int N = 0;
-    while (!int.TryParse(Console.ReadLine(), out N) || N < 0)
-    {
-        Console.Write("Incorrect input. Try again: ");
-    }
-    return N;
-}
-void PrintNumber(int N)
-{
-    if (N <= 0)
-    {
-        return;
-    }
-    else if (N == 1)
-    {
-        Console.Write($"{N}");
-    }
-    else
-    {
-        PrintNumber(N - 1);
-        Console.Write($", {N}");
-    }
-}
+//int N = InputGuard();
+//PrintNumber(N);
+//int InputGuard()
+//{
+//    int N = 0;
+//    while (!int.TryParse(Console.ReadLine(), out N) || N < 0)
+//    {
+//        Console.Write("Incorrect input. Try again: ");
+//    }
+//    return N;
+//}
+//void PrintNumber(int N)
+//{
+//    if (N <= 0)
+//    {
+//        return;
+//    }
+//    else if (N == 1)
+//    {
+//        Console.Write($"{N}");
+//    }
+//    else
+//    {
+//        PrintNumber(N - 1);
+//        Console.Write($", {N}");
+//    }
+//}
 
 
 //Задача 65: Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
